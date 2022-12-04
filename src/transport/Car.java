@@ -3,8 +3,15 @@ package transport;
 import static transport.ValidateUtils.getRandomInt;
 
 public class Car extends Transport implements Competing {
-    public Car(String brand, String model, float engineVolume) {
+    private final BodyType bodyType;
+    public Car(String brand, String model, float engineVolume, BodyType bodyType) {
+
         super(brand, model, engineVolume);
+        this.bodyType=bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
     }
 
     @Override
@@ -16,12 +23,19 @@ public class Car extends Transport implements Competing {
     public void finishTheMove() {
         System.out.printf("%s %s заканчивает движение  \n", getBrand(), getModel());
     }
-
+    public void printType() {
+        if (this.bodyType == null) {
+            System.out.println("- Данных по авто недостаточно");
+        } else {
+            System.out.println("- Тип кузова : " + this.bodyType.getName());
+        }
+    }
 
     @Override
     public String toString() {
-        return "Легковой автомобиль " + getBrand() + " модель " + getModel()
-                + " объем двигателя: " + getEngineVolume() + " литров.";
+        printType();
+        return "Легковой автомобиль " + getBrand() + " " + getModel()
+                + " объем двигателя: " + getEngineVolume() + " литров. ";
     }
 
     @Override
