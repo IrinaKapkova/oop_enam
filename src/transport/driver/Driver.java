@@ -5,7 +5,7 @@ import java.util.Objects;
 import static transport.ValidateUtils.validateInt;
 import static transport.ValidateUtils.validateString;
 
-public abstract class Driver {
+public abstract class Driver<T> {
 
     private final String name;
     private boolean certificate;
@@ -49,7 +49,7 @@ public abstract class Driver {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Driver driver = (Driver) o;
+        Driver<T> driver = (Driver<T>) o;
         return certificate == driver.certificate && experience == driver.experience && Objects.equals(name, driver.name) && Objects.equals(attention, driver.attention);
     }
 

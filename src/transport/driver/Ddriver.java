@@ -3,7 +3,7 @@ package transport.driver;
 
 import transport.Bus;
 
-public class Ddriver <D extends Bus> extends Driver {
+public class Ddriver <D extends Bus> extends Driver<D> {
 
     public Ddriver(String name, boolean certificate, int experience) {
         super(name, certificate, experience);

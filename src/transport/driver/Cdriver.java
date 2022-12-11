@@ -2,7 +2,7 @@ package transport.driver;
 
 import transport.Truck;
 
-public class Cdriver <C extends Truck> extends Driver {
+public class Cdriver <C extends Truck> extends Driver<C> {
 
     public Cdriver(String name, boolean certificate, int experience) {
         super(name, certificate, experience);
