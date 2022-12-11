@@ -24,6 +24,12 @@ public class Car extends Transport implements Competing {
     public void finishTheMove() {
         System.out.printf("%s %s заканчивает движение  \n", getBrand(), getModel());
     }
+
+    @Override
+    public boolean goDiagnosed() {
+        return Math.random()>0.5;
+    }
+
     public void printType() {
         if (this.bodyType == null) {
             System.out.println("- Данных по авто недостаточно");

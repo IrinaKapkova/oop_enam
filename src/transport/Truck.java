@@ -24,6 +24,10 @@ public class Truck extends Transport implements Competing{
         System.out.printf("%s %s заканчивает движение  \n", getBrand(), getModel());
     }
 
+    @Override
+    public boolean goDiagnosed() {
+        return Math.random()>0.5;
+    }
 
 
     @Override
@@ -77,7 +81,5 @@ public class Truck extends Transport implements Competing{
         public Float getTo() {
             return to;
         }
-
-
     }
 }

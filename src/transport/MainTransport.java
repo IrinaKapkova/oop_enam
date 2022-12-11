@@ -22,6 +22,8 @@ public class MainTransport {
         System.out.println(kamaz1);
         System.out.println(kamaz2);
         System.out.println(maz);
+        Object goDiagnosed;
+        goDiagnosed(ladaGranta, audiA8, bmvZ8, zil1, zil2, zil3, kamaz1, kamaz2, maz);
 //        ladaGranta.pitStop();
 //        ladaGranta.getBestTimeLap();
 //        ladaGranta.getMaxSpeed();
@@ -40,4 +42,19 @@ public class MainTransport {
 
     }
 
+    private static void goDiagnosed(Transport... transports) {
+        for (Transport transport : transports) {
+            goDiagnosedTransport(transport);
+        }
+    }
+
+    private static void goDiagnosedTransport(Transport transport) {
+        try {
+            if (!transport.goDiagnosed()) {
+                throw new RuntimeException(transport.getBrand() + " " +transport.getModel() + " не прошел диагностику");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
