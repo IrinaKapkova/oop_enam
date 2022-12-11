@@ -24,8 +24,21 @@ public class Truck extends Transport implements Competing{
         System.out.printf("%s %s заканчивает движение  \n", getBrand(), getModel());
     }
 
+
+
+    @Override
+    public void printType() {
+        if (typeOfCarrying==null){
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            String from=typeOfCarrying.getFrom()==null?"":" от " +typeOfCarrying.getFrom()+" тн ";
+            String to=typeOfCarrying.getTo()==null?"":" до " +typeOfCarrying.getTo()+" тн ";
+            System.out.println("Грузоподъемность авто:"+ from + to);
+        }
+    }
     @Override
     public String toString() {
+        printType();
         return "Грузовой автомобиль " + getBrand() + " " +getModel()
                 + ", объем двигателя: " + getEngineVolume() + " литров.";
     }
@@ -57,14 +70,14 @@ public class Truck extends Transport implements Competing{
             this.to=to;
         }
 
-        @Override
-        public String toString() {
-            String from1= from !=null?" от "+from:"данных по авто недостаточно";
-            String to1= to !=null?" до "+to:"данных по авто недостаточно";
-            return "Грузоподъемность " + from1 + to1;
+        public Float getFrom() {
+            return from;
+        }
+
+        public Float getTo() {
+            return to;
         }
 
 
-//        validateFloat
     }
 }

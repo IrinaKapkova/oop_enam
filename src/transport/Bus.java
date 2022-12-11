@@ -3,21 +3,19 @@ package transport;
 import static transport.ValidateUtils.getRandomInt;
 
 public class Bus extends Transport implements Competing {
-    private  final Volume volume;
-    public Bus(String brand, String model, float engineVolume,  Volume volume) {
+    private final Volume volume;
+
+    public Bus(String brand, String model, float engineVolume, Volume volume) {
         super(brand, model, engineVolume);
-        this.volume=volume;
+        this.volume = volume;
     }
+
     public void printType() {
-        if (this.volume == null) {
-            System.out.println("Информации недостаточно");
+        if (volume == null) {
+            System.out.println("Данных по авто  недостаточно");
         } else {
-            System.out.println("Вместимость автобуса: " + this.volume);
+            System.out.println("Вместимость автобуса: от " + volume.getFrom() + " до " + volume.getTo());
         }
-    }
-    @Override
-    public String toString() {
-        return "Автобус " + super.toString()+ getVolume();
     }
 
     public Volume getVolume() {
@@ -34,6 +32,7 @@ public class Bus extends Transport implements Competing {
         System.out.printf("%s %s заканчивает движение  \n", getBrand(), getModel());
 
     }
+
     @Override
     public void pitStop() {
         System.out.printf("%s %s на пит-стопе \n", getBrand(), getModel());
@@ -41,16 +40,17 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public void getBestTimeLap() {
-        System.out.println("У "+getBrand()+" "+getModel() +"лучшее время круга " + getRandomInt(1,17) + " минут "+ getRandomInt(0,59) + " секунд");
+        System.out.println("У " + getBrand() + " " + getModel() + "лучшее время круга " + getRandomInt(1, 17) + " минут " + getRandomInt(0, 59) + " секунд");
     }
 
     @Override
     public void getMaxSpeed() {
-        System.out.println("У "+getBrand()+" "+getModel() +"максимальная скорость  достигла " + getRandomInt(100,100) + " км в час");
+        System.out.println("У " + getBrand() + " " + getModel() + "максимальная скорость  достигла " + getRandomInt(100, 100) + " км в час");
     }
-    public enum Volume{
+
+    public enum Volume {
         SUPER_SMALL(null, 10),
-        SMALL(null, 25),
+        SMALL(11, 25),
         MIDDLE(40, 50),
         BIG(60, 80),
         SUPER_BIG(100, 120);
@@ -58,16 +58,29 @@ public class Bus extends Transport implements Competing {
         private final Integer from;
         private final Integer to;
 
-        Volume (Integer from, int to) {
+        Volume(Integer from, int to) {
             this.from = from;
             this.to = to;
         }
 
-        @Override
-        public String toString() {
-            String from1 = from != null ? " от " + from : "данных по автобусу недостаточно";
-            String to1 = to != null ? " до " + to + " мест" : "данных по автобусу недостаточно";
-            return "Вместимость " + from1 + to1;
+        public Integer getFrom() {
+            return from;
         }
+
+        public Integer getTo() {
+            return to;
+        }
+
+    }
+
+    public void printVolume() {
+        String from1 = volume.getFrom() != null ? " от " + volume.getFrom() : "данных по автобусу недостаточно";
+        String to1 = volume.getTo() != null ? " до " + volume.getTo() + " мест" : "данных по автобусу недостаточно";
+        System.out.println("Автобус " + super.toString() + " Вместимость " + from1 + to1);
+    }
+
+    public String toString() {
+        printVolume();
+        return null;
     }
 }

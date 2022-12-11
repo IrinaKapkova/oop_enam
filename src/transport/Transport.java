@@ -13,7 +13,6 @@ public abstract class Transport {
     String attention = "default";
 
     public Transport(String brand, String model, float engineVolume) {
-
         setBrand(brand);
         setModel(model);
         setEngineVolume(engineVolume);
@@ -45,7 +44,7 @@ public abstract class Transport {
     }
 
     public String toString () {
-        return String.format(" %s  %s , объем дигателя %.2f литров.", getBrand(), getModel(),getEngineVolume());
+     return String.format(" %s  %s , объем дигателя %.2f литров.", getBrand(), getModel(),getEngineVolume());
     }
 
     @Override
@@ -55,8 +54,8 @@ public abstract class Transport {
         Transport transport = (Transport) o;
         return Float.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model);
     }
-
-    @Override
+    public abstract void printType();
+@Override
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume);
     }

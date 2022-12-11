@@ -1,22 +1,21 @@
 package transport;
 
 
-
 public class MainTransport {
     public static void main(String[] args) {
-        Car ladaGranta = new Car("Lada", "Granta",  1.7f,BodyType.SEDAN);
+        Car ladaGranta = new Car("Lada", "Granta", 1.7f, BodyType.SEDAN);
         System.out.println(ladaGranta);
-        Car audiA8 = new Car("Audi", "A8",  3.0f, BodyType.SEDAN);
+        Car audiA8 = new Car("Audi", "A8", 3.0f, BodyType.SEDAN);
         System.out.println(audiA8);
-        Car bmvZ8 = new Car("BMW", "Z8",  3.0f,BodyType.SEDAN);
+        Car bmvZ8 = new Car("BMW", "Z8", 3.0f, BodyType.SEDAN);
         System.out.println(bmvZ8);
 
-        Bus zil1 = new Bus("ЗИЛ","325010", 4.75f, Bus.Volume.SMALL);
-        Bus zil2 = new Bus("ЗИЛ","325000", 4.75f, Bus.Volume.SUPER_BIG);
-        Bus zil3 = new Bus("ЗИЛ","325010-04", 4.75f, Bus.Volume.SMALL);
-        Truck kamaz1 = new Truck("Камаз","43509", 12.9f, Truck.TypeOfCarrying.N3);
-        Truck kamaz2 = new Truck("Камаз","4326-9", 10.8f, Truck.TypeOfCarrying.N2);
-        Truck maz = new Truck("Маз","6440", 12.5f, Truck.TypeOfCarrying.N3);
+        Bus zil1 = new Bus("ЗИЛ", "325010", 4.75f, Bus.Volume.SMALL);
+        Bus zil2 = new Bus("ЗИЛ", "325000", 4.75f, Bus.Volume.SUPER_BIG);
+        Bus zil3 = new Bus("ЗИЛ", "325010-04", 4.75f, Bus.Volume.SMALL);
+        Truck kamaz1 = new Truck("Камаз", "43509", 12.9f, Truck.TypeOfCarrying.N3);
+        Truck kamaz2 = new Truck("Камаз", "4326-9", 10.8f, Truck.TypeOfCarrying.N2);
+        Truck maz = new Truck("Маз", "6440", 12.5f, Truck.TypeOfCarrying.N3);
         System.out.println(zil1);
         System.out.println(zil2);
         System.out.println(zil3);
@@ -40,4 +39,5 @@ public class MainTransport {
 //        System.out.println(petrov);
 
     }
+
 }

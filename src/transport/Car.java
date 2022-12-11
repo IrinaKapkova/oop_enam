@@ -14,6 +14,7 @@ public class Car extends Transport implements Competing {
         return bodyType;
     }
 
+
     @Override
     public void startMoving() {
         System.out.printf("%s %s начинает движение  \n", getBrand(), getModel());
@@ -33,6 +34,7 @@ public class Car extends Transport implements Competing {
 
     @Override
     public String toString() {
+        System.out.println();
         printType();
         return "Легковой автомобиль " + getBrand() + " " + getModel()
                 + " объем двигателя: " + getEngineVolume() + " литров. ";
