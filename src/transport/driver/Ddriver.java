@@ -1,9 +1,7 @@
 package transport.driver;
-
-
 import transport.Bus;
 
-public class Ddriver <D extends Bus> extends Driver<D> {
+public class Ddriver extends Driver<Bus> {
 
     public Ddriver(String name, boolean certificate, int experience) {
         super(name, certificate, experience);
@@ -24,8 +22,5 @@ public class Ddriver <D extends Bus> extends Driver<D> {
         System.out.println("Водитель " + getName() + " заправляет машину");
     }
 
-    public void PrintRaceParticipants (D car) {
-        System.out.printf("Водитель %s на %s %s участвует в заезде\n", getName(), car.getBrand(), car.getModel());
-    }
 }
 

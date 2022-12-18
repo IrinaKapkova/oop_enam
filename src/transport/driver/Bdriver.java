@@ -2,11 +2,12 @@ package transport.driver;
 
 import transport.Car;
 
-public class Bdriver <B extends Car> extends Driver<B> {
+public class Bdriver extends Driver<Car> {
 
     public Bdriver(String name, boolean certificate, int experience) {
         super(name, certificate, experience);
     }
+
 
     @Override
     public void startMoving() {
@@ -23,8 +24,5 @@ public class Bdriver <B extends Car> extends Driver<B> {
         System.out.println("Водитель " + getName() + " заправляет машину");
     }
 
-    public void PrintRaceParticipants (B car) {
-        System.out.printf("Водитель %s на  %s %s участвует в заезде\n", getName(), car.getBrand(), car.getModel());
-    }
 
 }
