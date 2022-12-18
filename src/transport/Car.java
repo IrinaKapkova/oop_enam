@@ -10,6 +10,7 @@ public class Car extends Transport implements Competing {
         this.bodyType=bodyType;
     }
 
+
     public BodyType getBodyType() {
         return bodyType;
     }
@@ -28,6 +29,11 @@ public class Car extends Transport implements Competing {
     @Override
     public boolean goDiagnosed() {
         return Math.random()>0.5;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Автомобиль "+getBrand()+" "+getModel()+ " отремонтирован");
     }
 
     public void printType() {

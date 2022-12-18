@@ -2,7 +2,7 @@ package transport.driver;
 
 import transport.Truck;
 
-public class Cdriver <C extends Truck> extends Driver<C> {
+public class Cdriver extends Driver<Truck> {
 
     public Cdriver(String name, boolean certificate, int experience) {
         super(name, certificate, experience);
@@ -22,8 +22,5 @@ public class Cdriver <C extends Truck> extends Driver<C> {
     public void refuel() {
         System.out.println("Водитель " + getName() + " заправляет машину");
     }
-
-    public void PrintRaceParticipants(C car) {
-        System.out.printf("Водитель %s на  %s %s участвует в заезде\n", getName(), car.getBrand(), car.getModel());
-    }
 }
+
