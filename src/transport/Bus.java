@@ -9,17 +9,15 @@ public class Bus extends Transport implements Competing {
         super(brand, model, engineVolume);
         this.volume = volume;
     }
-
+    public Volume getVolume() {
+        return volume;
+    }
     public void printType() {
         if (volume == null) {
             System.out.println("Данных по авто  недостаточно");
         } else {
             System.out.println("Вместимость автобуса: от " + volume.getFrom() + " до " + volume.getTo());
         }
-    }
-
-    public Volume getVolume() {
-        return volume;
     }
 
     @Override
