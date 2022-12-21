@@ -11,11 +11,13 @@ import java.util.List;
 
 public class MainTransport {
     public static void main(String[] args) {
-        Sponsor avtolife = new Sponsor("Жизнь авто", 200000);
+        Sponsor avtolife1 = new Sponsor("Жизнь авто", 200000);
+        Sponsor avtolife2 = new Sponsor("Жизнь авто", 200000);
         Car ladaGranta = new Car("Lada", "Granta", 1.7f, BodyType.SEDAN);
         ladaGranta.addDriver(new Bdriver("Семенов Семен", true, 17));
         ladaGranta.addMechanic(new Mechanic<Car>("Андрей", "Мехнов", "Жигули"));
-        ladaGranta.addSponsor(new Sponsor("Автомир", 500000), avtolife);
+        ladaGranta.addSponsor(new Sponsor("Автомир", 500000), avtolife1);
+        ladaGranta.addSponsor(new Sponsor("Автомир", 500000), avtolife2);
         System.out.println(ladaGranta);
         Car audiA8 = new Car("Audi", "A8", 3.0f, BodyType.SEDAN);
         System.out.println(audiA8);
