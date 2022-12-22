@@ -17,8 +17,7 @@ public class Recipe {
         if (products.containsKey(product)) {
             throw new RuntimeException("Продукт "+ product.getName()+" уже есть в списке рецепта " +nameRecipe);
         } else if (value != null && value < 1) {
-            throw new IllegalArgumentException(
-                    "Количество продуктов должно быть не меньше 1! " + getNameRecipe());
+            this.products.put(product,1);
         } else {
             products.put(product, value);
         }
